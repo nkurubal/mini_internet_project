@@ -348,7 +348,7 @@ for ((i=0;i<n_extern_links;i++)); do
         echo " -c 'network "$(subnet_group "${grp_2}")"' \\" >> "${location2}"
         echo " -c 'exit' \\" >> "${location2}"
 
-        if [ $relation_grp_2 == 'Provider' ]; then
+        # if [ $relation_grp_2 == 'Provider' ]; then
             # echo " -c 'bgp community-list 2 permit $grp_2:10' \\" >> "${location2}"
             # echo " -c 'bgp community-list 2 permit $grp_2:20' \\" >> "${location2}"
             # echo " -c 'bgp community-list 2 permit $grp_2:30' \\" >> "${location2}"
@@ -362,7 +362,7 @@ for ((i=0;i<n_extern_links;i++)); do
             # echo " -c 'route-map LOCAL_PREF_OUT_${grp_1} permit 10' \\" >> "${location2}"
             # echo " -c 'match community 2' \\" >> "${location2}"
             # echo " -c 'exit' \\" >> "${location2}"
-        elif [ $relation_grp_2 == 'Customer' ]; then
+        # elif [ $relation_grp_2 == 'Customer' ]; then
             # echo " -c 'bgp community-list 1 permit $grp_2:10' \\" >> "${location2}"
             # echo " -c 'route-map LOCAL_PREF_IN_${grp_1} permit 10' \\" >> "${location2}"
             # echo " -c 'set community $grp_2:30' \\" >> "${location2}"
@@ -374,7 +374,7 @@ for ((i=0;i<n_extern_links;i++)); do
             #echo " -c 'route-map LOCAL_PREF_OUT_${grp_1} permit 10' \\" >> "${location2}"
             #echo " -c 'match community 1' \\" >> "${location2}"
             #echo " -c 'exit' \\" >> "${location2}"
-        elif [ $relation_grp_2 == 'Peer' ]; then
+        # elif [ $relation_grp_2 == 'Peer' ]; then
             #echo " -c 'bgp community-list 1 permit $grp_2:10' \\" >> "${location2}"
             #echo " -c 'route-map LOCAL_PREF_IN_${grp_1} permit 10' \\" >> "${location2}"
             #echo " -c 'set community $grp_2:20' \\" >> "${location2}"
@@ -386,7 +386,7 @@ for ((i=0;i<n_extern_links;i++)); do
             #echo " -c 'route-map LOCAL_PREF_OUT_${grp_1} permit 10' \\" >> "${location2}"
             #echo " -c 'match community 1' \\" >> "${location2}"
             #echo " -c 'exit' \\" >> "${location2}"
-        fi
+        # fi
     fi
 done
 
