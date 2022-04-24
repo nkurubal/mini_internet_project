@@ -194,9 +194,9 @@ for ((k=0;k<group_numbers;k++));do
                 echo " -c 'bgp router-id 180.80.${grp_2}.0' \\" >> "${location}"
             	echo " -c 'neighbor "${subnet1%/*}" remote-as "${grp_1}"' \\" >> "${location}"
             	echo " -c 'neighbor "${subnet1%/*}" activate' \\" >> "${location}"
-            	# echo " -c 'neighbor "${subnet1%/*}" route-server-client' \\" >> "${location}"
-            	# echo " -c 'neighbor "${subnet1%/*}" route-map "${grp_1}"_IMPORT import' \\" >> "${location}"
-            	# echo " -c 'neighbor "${subnet1%/*}" route-map "${grp_1}"_EXPORT export' \\" >> "${location}"
+            	echo " -c 'neighbor "${subnet1%/*}" route-server-client' \\" >> "${location}"
+            	echo " -c 'neighbor "${subnet1%/*}" route-map "${grp_1}"_IMPORT import' \\" >> "${location}"
+            	echo " -c 'neighbor "${subnet1%/*}" route-map "${grp_1}"_EXPORT export' \\" >> "${location}"
             	echo " -c 'exit' \\" >> "${location}"
 
                 docker exec -d "${group_number}"_IXP bash -c "ovs-vsctl add-port IXP grp_${grp_1}"
