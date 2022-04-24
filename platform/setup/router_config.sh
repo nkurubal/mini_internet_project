@@ -292,8 +292,8 @@ for ((i=0;i<n_extern_links;i++)); do
         echo " -c 'exit' \\" >> "${location1}"
         echo " -c 'router bgp "${grp_1}"' \\" >> "${location1}"
         echo " -c 'neighbor "${subnet2%???}" remote-as "${grp_2}"' \\" >> "${location1}"
-        # echo " -c 'neighbor "${subnet2%???}" route-map LOCAL_PREF_IN_${grp_2} in' \\" >> "${location1}"
-        # echo " -c 'neighbor "${subnet2%???}" route-map LOCAL_PREF_OUT_${grp_2} out' \\" >> "${location1}"
+        echo " -c 'neighbor "${subnet2%???}" route-map LOCAL_PREF_IN_${grp_2} in' \\" >> "${location1}"
+        echo " -c 'neighbor "${subnet2%???}" route-map LOCAL_PREF_OUT_${grp_2} out' \\" >> "${location1}"
         echo " -c 'network "$(subnet_group "${grp_1}")"' \\" >> "${location1}"
         echo " -c 'exit' \\" >> "${location1}"
 
@@ -343,8 +343,8 @@ for ((i=0;i<n_extern_links;i++)); do
         echo " -c 'exit' \\" >> "${location2}"
         echo " -c 'router bgp "${grp_2}"' \\" >> "${location2}"
         echo " -c 'neighbor "${subnet1%???}" remote-as "${grp_1}"' \\" >> "${location2}"
-        # echo " -c 'neighbor "${subnet1%???}" route-map LOCAL_PREF_IN_${grp_1} in' \\" >> "${location2}"
-        # echo " -c 'neighbor "${subnet1%???}" route-map LOCAL_PREF_OUT_${grp_1} out' \\" >> "${location2}"
+        echo " -c 'neighbor "${subnet1%???}" route-map LOCAL_PREF_IN_${grp_1} in' \\" >> "${location2}"
+        echo " -c 'neighbor "${subnet1%???}" route-map LOCAL_PREF_OUT_${grp_1} out' \\" >> "${location2}"
         echo " -c 'network "$(subnet_group "${grp_2}")"' \\" >> "${location2}"
         echo " -c 'exit' \\" >> "${location2}"
 
