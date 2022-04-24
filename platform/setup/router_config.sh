@@ -297,7 +297,7 @@ for ((i=0;i<n_extern_links;i++)); do
         echo " -c 'network "$(subnet_group "${grp_1}")"' \\" >> "${location1}"
         echo " -c 'exit' \\" >> "${location1}"
 
-        if [ $relation_grp_1 == 'Provider' ]; then
+        # if [ $relation_grp_1 == 'Provider' ]; then
             # echo " -c 'bgp community-list 2 permit $grp_1:10' \\" >> "${location1}"
             # echo " -c 'bgp community-list 2 permit $grp_1:20' \\" >> "${location1}"
             # echo " -c 'bgp community-list 2 permit $grp_1:30' \\" >> "${location1}"
@@ -311,7 +311,7 @@ for ((i=0;i<n_extern_links;i++)); do
             # echo " -c 'route-map LOCAL_PREF_OUT_${grp_2} permit 10' \\" >> "${location1}"
             # echo " -c 'match community 2' \\" >> "${location1}"
             # echo " -c 'exit' \\" >> "${location1}"
-        elif [ $relation_grp_1 == 'Customer' ]; then
+        # elif [ $relation_grp_1 == 'Customer' ]; then
             # echo " -c 'bgp community-list 1 permit $grp_1:10' \\" >> "${location1}"
             # echo " -c 'route-map LOCAL_PREF_IN_${grp_2} permit 10' \\" >> "${location1}"
             # echo " -c 'set community $grp_1:30' \\" >> "${location1}"
@@ -323,7 +323,7 @@ for ((i=0;i<n_extern_links;i++)); do
             # echo " -c 'route-map LOCAL_PREF_OUT_${grp_2} permit 10' \\" >> "${location1}"
             # echo " -c 'match community 1' \\" >> "${location1}"
             # echo " -c 'exit' \\" >> "${location1}"
-        elif [ $relation_grp_1 == 'Peer' ]; then
+        # elif [ $relation_grp_1 == 'Peer' ]; then
             # echo " -c 'bgp community-list 1 permit $grp_1:10' \\" >> "${location1}"
             # echo " -c 'route-map LOCAL_PREF_IN_${grp_2} permit 10' \\" >> "${location1}"
             # echo " -c 'set community $grp_1:20' \\" >> "${location1}"
@@ -335,7 +335,7 @@ for ((i=0;i<n_extern_links;i++)); do
             # echo " -c 'route-map LOCAL_PREF_OUT_${grp_2} permit 10' \\" >> "${location1}"
             # echo " -c 'match community 1' \\" >> "${location1}"
             # echo " -c 'exit' \\" >> "${location1}"
-        fi
+        # fi
 
         location2="${DIRECTORY}"/groups/g"${grp_2}"/"${router_grp_2}"/init_full_conf.sh
         echo " -c 'interface ext_"${grp_1}"_"${router_grp_1}"' \\" >> "${location2}"
